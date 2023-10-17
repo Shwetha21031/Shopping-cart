@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-
+import LoginPage from './Components/LoginPage';
+import { Provider } from 'react-redux';
+import store from './Redux/Store';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './Components/HomePage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer />
+    <Routes>
+     <Route path='/' element={<LoginPage />} />
+     <Route path='/homePage' element={<HomePage />} />
+    </Routes>
     </div>
+    
+    </Provider>
   );
 }
 
