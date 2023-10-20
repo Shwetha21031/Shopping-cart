@@ -34,7 +34,10 @@ const HomePage = () => {
 
     const handleLogout =()=>{
         navigate('/')
-        toast.error("logged out")
+        toast.error("logged out",{
+            position: "top-right",
+            autoClose: 1000,
+        })
     }
   
     const handleCart = () => {
@@ -54,7 +57,7 @@ const HomePage = () => {
     <div className='welcome'><p>Welcome {userName}</p></div>
     
     <div>
-   <input type='text' placeholder='search for products here' onChange={e=>setSearchTxt(e.target.value)} />
+   <input type='text' placeholder='search for products here' onChange={(e)=>setSearchTxt(e.target.value)} />
    <button onClick={handleSearch} className='search-btn'>< BsSearch/></button>
    </div>
 

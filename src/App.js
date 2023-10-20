@@ -8,16 +8,17 @@ import HomePage from './Components/HomePage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './Components/Cart';
-import LoginDetails from './Components/LoginDetails';
+import Login from './Components/Login';
+import RegisterUser from './Components/RegisterUser';
 
 function App() {
   return (
     <Provider store={store}>
     <div className="App">
-      <LoginDetails />
       <ToastContainer />
     <Routes>
-     <Route path='/' element={<LoginPage />} />
+     <Route path='/' element={<Login />} />
+     <Route path='/Register' element={<RegisterUser/>} />
      <Route path='/homePage' element={<HomePage />} />
      <Route path='/homePage/Cart' element={<Cart />} />
     </Routes>
