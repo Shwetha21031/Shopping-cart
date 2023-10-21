@@ -3,7 +3,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { registerUserDetails, setUserDetails } from '../Redux/loginSlice'
+import { registerUser } from '../../Redux/loginSlice'
+import './RegisterUser.css'
 function RegisterUser() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -19,7 +20,7 @@ function RegisterUser() {
     const handleNewRegister = () => {
         const validPwd = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(newUser.password);
         if (validPwd) {
-            dispatch(setUserDetails(newUser))
+            dispatch(registerUser(newUser))
           toast.success('registered user successfully.',{
             position: 'top-right',
             autoClose: 1000
@@ -39,16 +40,15 @@ function RegisterUser() {
 
   return (
     <>
-   <div className='login-main'>
-    <div className='Login-container'>
+   <div className='register-main'>
+    <div className='register-container'>
         <input type='text' placeholder='enter username' onChange={(e)=>setNewUser({...newUser,username: e.target.value})}/>
 <br></br>
-        <input type='text' placeholder='password' onChange={(e)=>setNewUser({...newUser,password:e.target.value})}/>
+        <input type='text' placeholder='enter password' onChange={(e)=>setNewUser({...newUser,password:e.target.value})}/>
 <br></br>
         <button onClick={handleNewRegister}>Register</button>
         <br></br>
         <button onClick={handleBackToLogin}>Back to login</button>
-        <br></br>
     </div>
     </div>
     </>

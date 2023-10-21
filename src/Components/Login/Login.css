@@ -1,0 +1,55 @@
+
+/* loginnnnnnnn */
+.login-main{
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.Login-container,.new-pwd{
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 2px black;
+  padding: 30px;
+}
+
+.Login-container input{
+  padding: 10px 20px;
+}
+.new-pwd input{
+  padding: 10px 20px;
+}
+
+.Login-container button{
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 45px;
+  width: 100%;
+  border-radius: 5px;
+  margin: -5px;
+}  
+.new-pwd button{
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 40px;
+  width: 90%;
+  border-radius: 5px;
+  margin: 10px;
+}  
+
+.Login-container button:active{
+  background-color: rgb(65, 65, 65);
+}
+.new-pwd button:active{
+  background-color: rgb(65, 65, 65);
+}
