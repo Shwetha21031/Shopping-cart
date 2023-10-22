@@ -6,14 +6,15 @@ import {
   removeFromCart,
   updateQuantity,
   updateTotal,
+  clearCart,
 } from "../../Redux/cartSlice";
-import './Cart.css'
+import "./Cart.css";
+
 function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   let cartItems = useSelector((state) => state.cart.cart);
   const total = useSelector((state) => state.cart.totalAmount);
-  console.log(cartItems, "cart items");
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -21,16 +22,38 @@ function Cart() {
     dispatch(updateQuantity());
     console.log(total);
   }, [cartItems]);
+
   const handlehome = () => {
     navigate("/homePage");
   };
+
   const handleDecrease = (item) => {
     dispatch(removeFromCart(item));
   };
 
+  // Load cart items from localStorage on component mount
+  useEffect(() => {
+    const cartData = JSON.parse(localStorage.getItem("cartData"));
+    if (cartData) {
+      dispatch(updateTotal());
+      dispatch(updateQuantity());
+    }
+  }, []);
+
+  // Save cart items to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cartData", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   cartItems = cartItems.filter((item) =>
     item.title.toLowerCase().includes(searchText.toLowerCase())
   );
+
+  const handleclearCart = () => {
+    dispatch(clearCart())
+    // Clear cart data in localStorage
+    localStorage.removeItem("cartData");
+  };
 
   return (
     <div className="cart-main">
@@ -63,7 +86,7 @@ function Cart() {
               return (
                 <tr key={item.id}>
                   <td style={{ fontSize: "12px" }}>
-                    <img src={item.image} />
+                    <img src={item.image} alt={item.title} />
                     <br></br>
                     {item.title}
                   </td>
@@ -86,14 +109,14 @@ function Cart() {
               </td>
             </tr>
           )}
-
-          {
-            <div style={{ fontWeight: "bold" }}>
-              Net Total : {Math.round(total * 100) / 100}
-            </div>
-          }
         </tbody>
       </table>
+      {
+        <div className="total">
+          <button onClick={handleclearCart}>Clear cart</button>
+          <p>Net Total : {Math.round(total * 10) / 10}</p>
+        </div>
+      }
     </div>
   );
 }

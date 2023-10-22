@@ -1,9 +1,8 @@
-.cart-main{
+.cart-main {
   display: flex;
   flex-direction: column;
-
 }
-.cart-head{
+.cart-head {
   /* background-color: aliceblue; */
   width: 80%;
   margin: 20px auto;
@@ -12,46 +11,45 @@
   justify-content: space-between;
   margin-bottom: -30px;
 }
-.cart-head input{
+.cart-head input {
   width: 200px;
-  padding-left: 30px ;
+  padding-left: 30px;
 }
-
 
 /* cart items */
 
-table{
-    border-collapse: collapse;
-    border-color: rgb(180, 180, 180);
-    width: 80%;
-    margin: 50px auto;
-    position: relative;
-    text-align: center;
+table {
+  border-collapse: collapse;
+  border-color: rgb(180, 180, 180);
+  width: 80%;
+  margin: 50px auto;
+  position: relative;
+  text-align: center;
+  background-color: white;
 }
-td,th{
+td,
+th {
   padding: 10px 20px;
 }
 
-.no-items{
+.no-items {
   text-align: center;
-  ;
 }
 
-table tr img{
+table tr img {
   width: 100px;
   height: 100px;
   object-fit: contain;
 }
 
-.home-btn{
-   background-color: black;
-   color: aliceblue;
-   padding: 5px 10px;
-   border-radius: 3px;
-
+.home-btn {
+  background-color: black;
+  color: aliceblue;
+  padding: 5px 10px;
+  border-radius: 3px;
 }
 
-.quantity{
+.quantity {
   background-color: rgb(234, 54, 54);
   font-size: 6px;
   color: aliceblue;
@@ -61,12 +59,29 @@ table tr img{
   top: 0px;
 }
 
-.changing-btns button{
+.changing-btns button {
   padding: 5px 8px;
   border: none;
   font-weight: bold;
   margin: 3px;
-
 }
 
-
+.total {
+  display: flex;
+  align-items: center;
+  /* background-color: aliceblue; */
+  width: 80%;
+  margin: -20px auto;
+  justify-content: space-between;
+}
+.total button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+}
+.total p {
+  transform: translate(-30px, 0px);
+  font-weight: bold;
+}

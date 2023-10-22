@@ -25,7 +25,7 @@ const productsSlice = createSlice({
       const filteredItem = state.items.filter(
         (item) =>
           item.title.toLowerCase().includes(action.payload) ||
-          item.description.toLowerCase().includes(action.payload)
+          item.title.toLowerCase().includes(action.payload)
       );
       state.temp = filteredItem;
     },

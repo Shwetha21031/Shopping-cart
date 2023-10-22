@@ -1,32 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { act } from "@testing-library/react";
-import axios from "axios";
-
-
-
 
 const loginSlice = createSlice({
-    name: "login",
-    initialState:{
-        userName:'',
-        users: [],
-        status: null,
+  name: "login",
+  initialState: {
+    userName: "",
+    users: [],
+    status: null,
+  },
+  reducers: {
+    setUserDetails: (state, action) => {
+      state.users = [...state.users, ...action.payload];
+      state.userName = action.payload.username;
+      // adding to local storage
+      localStorage.setItem("userDetails", JSON.stringify(state.users));
+      localStorage.setItem("userName", state.userName);
     },
-   reducers: {
-    setUserDetails: (state,action) => {
-        state.users = [...state.users , ...action.payload]
-        state.userName = action.payload.username;
+    registerUser: (state, action) => {
+      state.users.push(action.payload);
+      // Save updated users to localStorage
+      localStorage.setItem("userDetails", JSON.stringify(state.users));
     },
-    registerUser: (state,action)=>{
-        state.users.push(action.payload)
+    setName: (state, action) => {
+      state.userName = action.payload;
+      // Save updated username to localStorage
+      localStorage.setItem("userName", state.userName);
     },
-    setName: (state,action)=>{
-        state.userName = action.payload
-    }
-   },
-   
-})
+  },
+});
 
-export default loginSlice.reducer
-export const {registerUser,setUserDetails,setName} = loginSlice.actions
+export default loginSlice.reducer;
+export const { registerUser, setUserDetails, setName } = loginSlice.actions;

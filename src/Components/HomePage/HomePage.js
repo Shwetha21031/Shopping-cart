@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import {  BsCart3 } from "react-icons/bs";
 import "./HomePage.css";
 import img from "./logoo.jpeg";
+import { Modal } from "bootstrap";
 const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -137,6 +138,7 @@ const HomePage = () => {
           ) : (
             <div className="no-items">No items available</div>
           )}
+
         </div>
       </div>
     </>

@@ -41,6 +41,7 @@ function RegisterUser() {
   return (
     <>
    <div className='register-main'>
+    <h1>Register</h1>
     <div className='register-container'>
         <input type='text' placeholder='enter username' onChange={(e)=>setNewUser({...newUser,username: e.target.value})}/>
 <br></br>
