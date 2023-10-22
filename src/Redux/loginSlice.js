@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const loginSlice = createSlice({
   name: "login",
   initialState: {
-    userName: "",
+    // userName: "",
     users: [],
     status: null,
   },
@@ -20,11 +20,10 @@ const loginSlice = createSlice({
       // Save updated users to localStorage
       localStorage.setItem("userDetails", JSON.stringify(state.users));
     },
-    setName: (state, action) => {
-      state.userName = action.payload;
-      // Save updated username to localStorage
-      localStorage.setItem("userName", state.userName);
-    },
+    // setName: (state, action) => {
+    //   state.userName = action.payload;
+    //   localStorage.setItem("userName", state.userName);
+    // },
   },
 });
 

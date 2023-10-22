@@ -13,12 +13,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {  BsCart3 } from "react-icons/bs";
 import "./HomePage.css";
-import img from "./logoo.jpeg";
-import { Modal } from "bootstrap";
+import img from "./logo.jpeg";
 const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userName = useSelector((state) => state.login.userName);
+  // const userName = useSelector((state) => state.login.userName);
+  const name = localStorage.getItem('username')
   let items = useSelector((state) => state.products.temp);
   let load = useSelector((state) => state.products.status);
   let itemsQuantity = useSelector((state) => state.cart.quantity);
@@ -35,6 +35,7 @@ const HomePage = () => {
       position: "top-right",
       autoClose: 1000,
     });
+    localStorage.removeItem('username')
   };
 
   const handleCart = () => {
@@ -57,7 +58,7 @@ const HomePage = () => {
         <div className="header">
           <div className="welcome">
             <p>
-              Welcome <span className="name">{userName}</span>
+              Welcome <span className="name">{name}</span>
             </p>
           </div>
 

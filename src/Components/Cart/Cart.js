@@ -14,6 +14,8 @@ function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   let cartItems = useSelector((state) => state.cart.cart);
+  // let cartItems = localStorage.getItem('cart');
+  // cartItems  = JSON.parse(cartItems)
   const total = useSelector((state) => state.cart.totalAmount);
   const [searchText, setSearchText] = useState("");
 

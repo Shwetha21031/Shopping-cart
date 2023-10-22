@@ -8,7 +8,7 @@ import './Login.css'
 
 function Login() {
   const users = useSelector((state) => state.login.users);
-  let name = useSelector((state)=>state.login.userName)
+  // let name = useSelector((state)=>state.login.userName)
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [tempuname, setTempuname] = useState("");
@@ -37,9 +37,8 @@ function Login() {
           position: "bottom-left",
           autoClose: 500,
         });
-        
-        dispatch(setName(tempuname));
-        console.log('name set to' , name)
+        localStorage.setItem('username',tempuname)
+        // dispatch(setName(tempuname));
         navigate("/homePage");
 
       } else {
