@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Shwetha21031/assessment-3.git/static/css/main.3fbf356a.css",
+    "main.js": "/Shwetha21031/assessment-3.git/static/js/main.31ff8946.js",
+    "static/js/787.3abb532c.chunk.js": "/Shwetha21031/assessment-3.git/static/js/787.3abb532c.chunk.js",
+    "static/media/logo.svg": "/Shwetha21031/assessment-3.git/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Shwetha21031/assessment-3.git/index.html",
+    "main.3fbf356a.css.map": "/Shwetha21031/assessment-3.git/static/css/main.3fbf356a.css.map",
+    "main.31ff8946.js.map": "/Shwetha21031/assessment-3.git/static/js/main.31ff8946.js.map",
+    "787.3abb532c.chunk.js.map": "/Shwetha21031/assessment-3.git/static/js/787.3abb532c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fbf356a.css",
+    "static/js/main.31ff8946.js"
+  ]
+}
